@@ -4,11 +4,11 @@ set -euo pipefail
 
 if [[ -d src/ ]]; then
 
-  find src/ -type f -name "*.java" -exec javac -cp "dst/*" -d dst/mywebsiteengine/ '{}' +
+  find src/ -type f -name "*.java" -exec javac -cp "dst/*" -d dst/ '{}' +
 
-  jar cf dst/mywebsiteengine.jar -C dst/mywebsiteengine/ ./
+  jar cf dst/mywebsiteengine.jar -C dst/ com/
 
-  rm -r dst/mywebsiteengine/
+  rm -r dst/com/
 
 fi
 
