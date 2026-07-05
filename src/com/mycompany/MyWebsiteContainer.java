@@ -1,6 +1,6 @@
 package com.mycompany;
 
-class MyWebsiteEngine {
+class MyWebsiteContainer {
 
   static void main() {
   
