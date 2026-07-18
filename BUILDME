@@ -4,11 +4,15 @@ set -euo pipefail
 
 if [[ -d src/ ]]; then
 
-  find src/ -type f -name "*.java" -exec javac -cp "dst/*" -d dst/ '{}' +
+  printf "Building src/\n"
 
-  jar cf dst/mywebsitecontainer.jar -C dst/ com/
+  mkdir -p dst/lib/
 
-  rm -r dst/com/
+  find src/ -type f -name "*.java" -exec javac -cp "dst/lib/*" -d dst/lib/ '{}' +
+
+  jar cf dst/lib/mywebsitecontainer.jar -C dst/lib/ com/
+
+  rm -r dst/lib/com/
 
 fi
 
