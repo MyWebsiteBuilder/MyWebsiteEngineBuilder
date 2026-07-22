@@ -10,7 +10,7 @@ if [[ -d src/ ]]; then
 
   find src/ -type f -name "*.java" -exec javac -cp "dst/lib/*" -d dst/lib/ '{}' +
 
-  jar cf dst/lib/mywebsitecontainer.jar -C dst/lib/ com/
+  jar cf dst/lib/mywebsiteappcontainer.jar -C dst/lib/ com/
 
   rm -r dst/lib/com/
 
